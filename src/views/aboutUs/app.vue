@@ -10,7 +10,7 @@
     </div>
   <div class="mint-cell-value"><span></span></div>
   </div>
-  <div class="mint-cell-right"></div>
+  <div class="mint-cell-right"> </div>
 </a>
   </UIFrame>
 </template>
