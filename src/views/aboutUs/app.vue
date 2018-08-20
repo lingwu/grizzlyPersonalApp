@@ -11,8 +11,7 @@
    </div>
   </div>
   <template v-for="lists in list">
-    <Cell v-bind:title="lists.title" v-bind:value="lists.con" v-if="!lists.to"></Cell>
-    <Cell v-bind:title="lists.title" v-bind:value="lists.con" v-bind:to='lists.to' is-link v-else></Cell>
+    <Cell v-bind:title="lists.title" v-bind:value="lists.con" v-bind:to='lists.to' :is-link="!!lists.to"></Cell>
   </template>
   </UIFrame>
 </template>
