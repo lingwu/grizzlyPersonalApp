@@ -10,20 +10,10 @@
      {{appCon}}
    </div>
   </div>
-  <a class="mint-cell" v-for='lists in list'>
-    <span class="mint-cell-mask"></span>
-    <div class="mint-cell-left"></div>
-    <div class="mint-cell-wrapper">
-      <div class="mint-cell-title">
-        <span class="mint-cell-text">{{lists.title}}</span>
-      </div>
-      <div class="mint-cell-value is-link">
-        <span>{{lists.con}}</span>
-      </div>
-      <i class="mint-cell-allow-right"></i>
-    </div>
-    <div class="mint-cell-right"></div>
-  </a>
+  <template v-for="lists in list">
+    <Cell v-bind:title="lists.title" v-bind:value="lists.con" v-if="!lists.to"></Cell>
+    <Cell v-bind:title="lists.title" v-bind:value="lists.con" v-bind:to='lists.to' is-link v-else></Cell>
+  </template>
   </UIFrame>
 </template>
 
@@ -42,7 +32,7 @@ export default {
        {title:'软件版本',con:'1.2.3'},
        {title:'客服电话',con:'400-620-4520'},
        {title:'客服电话',con:'www.dhxhr.com'},
-       {title:'隐私条款',con:'www.dhxhr.com'}
+       {title:'隐私条款',con:'www.dhxhr.com',to:'http://www.dhxhr.com'}
       ],
       appCon:'大灰熊科技大灰熊科技大灰熊科技大灰熊科技大灰熊科技大灰熊科技  大灰熊科技大灰熊科技大灰熊科技大灰熊科技大灰熊科技大灰熊科技'
     };
@@ -77,4 +67,9 @@ export default {
 </script>
 <style lang="less" scoped>
 @import url('../../assets/css/base.less');
+.mu-card-media > img{
+  min-width: 80%;
+  width: 80%;
+  margin: 0 auto;
+}
 </style>
