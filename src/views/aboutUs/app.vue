@@ -4,7 +4,7 @@
   >
   <div class="mu-card">
    <div class="mu-card-media">
-    <img src="../../assets/images/schoolLogo.png" />
+    <!-- <img src="../../assets/images/schoolLogo.png" /> -->
    </div>
    <div class="mu-card-text">
      {{appCon}}
